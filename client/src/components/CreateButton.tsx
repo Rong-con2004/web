@@ -3,9 +3,11 @@ import { RoomContext } from "../context/RoomContext";
 
 export const Join: React.FC = () => {
   const ws = useContext(RoomContext);
+  const webS = ws.ws;
   const createRoom = () => {
-    ws.emit("create-room");
-    console.log(ws);
+    webS.emit("create-room");
+    // console.log("Peers ", ws.peers);
+    // console.log(typeof webS.emit);
   };
   return (
     <button
